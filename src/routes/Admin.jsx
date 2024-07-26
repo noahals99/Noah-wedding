@@ -127,6 +127,7 @@ function Admin(){
                                     <p>{user.lastName}</p>
                                 </div>
                                 <p className="user-line-id">{user._id}</p>
+                                <p>{user.lastName}</p>
                             </div>
                         )
                     })
