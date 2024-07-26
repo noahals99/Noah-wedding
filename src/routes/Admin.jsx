@@ -44,6 +44,8 @@ function Admin(){
     const [isVisible, toggleVisible] = useState(false);
     const [usersData, setUsersData] = useState(null);
     const [dataHasChanged, setDataHasChanged] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [isPopupVisible, setIsPopupVisible] =useState(false);
     const navigate = useNavigate();
 
     useEffect(()=> {
@@ -83,6 +85,34 @@ function Admin(){
         }
     }
     
+    const toggleIsPopupVisible = () => {
+        if(isPopupVisible === true){
+            setIsPopupVisible(false);
+        }else{
+            setIsPopupVisible(true);
+        }
+    }
+
+    const handleClick = (user) => {
+        setSelectedUser(user);
+        toggleDataHasChanged();
+        toggleIsPopupVisible();
+    }
+
+    const getPopupVisibility = () => {
+        if(isPopupVisible === true){
+            return {"display": "flex"}
+        }else{
+            return {"display": "none"}
+        }
+    }
+
+    const handleBackgroundClick = (event) => {
+        if(event.target.id === "user-popup-admin"){
+            toggleIsPopupVisible();
+        }
+    }
+
     return(
         <div className='app-background-color'>
             <GroupsButton isVisible={isVisible} toggleVisible={toggleVisible}></GroupsButton>
@@ -91,15 +121,29 @@ function Admin(){
                 {usersData &&
                     usersData.map((user) => {
                         return(
-                            <UserCard usersDataObject={user} key={user._id} toggleDataHasChanged={toggleDataHasChanged}></UserCard>
+                            <div key={user._id} className="user-line" onClick={() => handleClick(user)}>
+                                <div className="user-line-name-container">
+                                    <p className="user-line-first-name">{user.firstName}</p>
+                                    <p>{user.lastName}</p>
+                                </div>
+                                <p className="user-line-id">{user._id}</p>
+                            </div>
                         )
                     })
                 }
-                <PlusIcon toggleDataHasChanged={toggleDataHasChanged}></PlusIcon>
+                <div id="plus-icon-container">
+                    <PlusIcon toggleDataHasChanged={toggleDataHasChanged}></PlusIcon>
+                </div>
+                
             </div>
-            
+            <div id="user-popup-admin" style={getPopupVisibility()} onClick={handleBackgroundClick}>
+                {(selectedUser)&&
+                    <UserCard usersDataObject={selectedUser} toggleDataHasChanged={toggleDataHasChanged} dataHasChanged={dataHasChanged}></UserCard>
+                }
+            </div>
         </div>
     )
 }
+
 
 export default Admin

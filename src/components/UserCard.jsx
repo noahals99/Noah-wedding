@@ -144,7 +144,7 @@ const DeleteButton = ({id, toggleDataHasChanged, RsvpId}) => {
 
 
 
-function UserCard({usersDataObject, toggleDataHasChanged}){
+function UserCard({usersDataObject, toggleDataHasChanged, dataHasChanged}){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -192,7 +192,7 @@ function UserCard({usersDataObject, toggleDataHasChanged}){
         if(userData.weddingRole){
             setWeddingRole(userData.weddingRole);
         }
-    },[])
+    },[dataHasChanged])
 
     const handleValueChange = (event, input) => {
 
@@ -248,10 +248,8 @@ function UserCard({usersDataObject, toggleDataHasChanged}){
     const userData = usersDataObject;
     return(
         <div className="UserCard">
-            <div className="buttons-container">
-                <DeleteButton id={userData._id} toggleDataHasChanged={toggleDataHasChanged} RsvpId={userData.rsvpSelection}></DeleteButton>
-                <EditButton toggleIsEditing={toggleIsEditing} isEditing={isEditing}></EditButton>
-            </div>
+            <DeleteButton id={userData._id} toggleDataHasChanged={toggleDataHasChanged} RsvpId={userData.rsvpSelection}></DeleteButton>
+            <EditButton toggleIsEditing={toggleIsEditing} isEditing={isEditing}></EditButton>
             
             <div className="user-card-aligner">
                 <div className="card-info-section">
