@@ -40,9 +40,11 @@ function Home() {
     useEffect(() => {
         if(searchParams.get('id') !== null){
             if(searchParams.get('id') === "admin"){
+                window.localStorage.removeItem("userId");
                 setUserKey(adminId);
                 setHasSeenHome(true);
             }else{
+                window.localStorage.removeItem("userId");
                 setUserKey(searchParams.get('id'));
             };
         }else{
