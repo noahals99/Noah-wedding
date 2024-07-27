@@ -412,10 +412,21 @@ function Rsvp() {
                                             <p id='song-select-section-title' className='subsection-title'>WANT TO HEAR A SONG? SO DO WE! SUGGEST SOME...</p>
                                             <p className='subsection-info-small'>TAP A SELECTED SONG TO REMOVE</p>
                                             <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}></SelectedSongsDisplay>
-                                            {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
-                                                <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>:
-                                                <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
+                                            {(userData.group) ? 
+                                                <div>
+                                                    {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
+                                                        <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>:
+                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
+                                                    }
+                                                </div>:
+                                                <div>
+                                                    {(Object.keys(selectedSongs).length != 2) ?
+                                                        <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of 2</p>:
+                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
+                                                    }
+                                                </div>
                                             }
+                                            
                                             
                                             <p id='search-song-title'>SEARCH FOR A SONG</p>
                                             <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>

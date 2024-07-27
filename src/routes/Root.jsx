@@ -4,7 +4,8 @@ import axios from 'axios';
 
 export const languageContext = createContext(null);
 export const UserContext = createContext(null);
-export const apiUrlStart = "https://backend-late-frost-3509.fly.dev/api"
+export const apiUrlStart = "http://localhost:8080/api"
+/*export const apiUrlStart = "https://backend-late-frost-3509.fly.dev/api"*/
 export const adminId = "66820a3e475c3dd2a5f87f24"
 
 
