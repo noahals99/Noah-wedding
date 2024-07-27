@@ -87,7 +87,7 @@ p{
 #selection-menu-container{
   display: flex;
   position: absolute;
-  bottom: 12vh;
+  bottom: 15vh;
   left: 5px;
 }
 
