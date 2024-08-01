@@ -24,6 +24,19 @@ const variants = {
     }
 };
 
+const cardVariants = {
+    offscreen: {
+      opacity: 0
+    },
+    onscreen: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+      }
+    }
+  };
+
+
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
@@ -46,9 +59,16 @@ function LodgingCard({item}) {
         }
         
     }
+    
 
     return(
-        <div className="lodging-card-container">
+        <motion.div
+            className="lodging-card-container"
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={cardVariants}
+            viewport={{ once: true, amount: 0.2 }}
+        >
             <div className="lodging-card-info-container">
                 <div className="lodging-title-container">
                     <p className="lodging-card-title">{item.name}</p>
@@ -97,7 +117,7 @@ function LodgingCard({item}) {
                 </div>
                 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

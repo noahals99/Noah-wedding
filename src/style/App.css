@@ -984,8 +984,15 @@ p{
   margin-bottom: 10px;
 }
 
+.subsection-lodging-container{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+
 .lodging-subsection{
-  margin-top: 40px;
+  margin-top: 60px;
   padding-bottom: 150px;
   position: absolute;
   left: 0px;
@@ -1220,3 +1227,4 @@ p{
   font-weight: bold;
   cursor: pointer;
 }
+
