@@ -154,7 +154,7 @@ function UserSelectPopup({isRsvpClick, setWhileHoverToggle, setInputBlockingboxS
                             animate={isUserSelectPopupVisible ? "open" : "closed"}
                             variants={textVariants}
                         >
-                            <p className='user-select-title'>Who are you?</p>
+                            <p className='user-select-title'>WHO ARE YOU?</p>
                             <div className='name-list-box noselect'>
                                 {(userList)&&
                                     <div className='name-list-box-container'>

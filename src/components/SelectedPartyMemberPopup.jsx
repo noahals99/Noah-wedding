@@ -75,9 +75,9 @@ const variants = {
   };
 
 
-const swipeConfidenceThreshold = 10000;
+const swipeConfidenceThreshold = 50;
 const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
+  return Math.abs(offset) * velocity * 0.05;
 };
 
 function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, popupIsClosing, setPopupIsClosing}){
@@ -94,7 +94,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
     useEffect(() => {
         const interval = setInterval(() => {
             paginate(1);
-        }, 4000);
+        }, 6000);
 
         return () => clearInterval(interval);
     },[page])

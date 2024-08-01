@@ -1228,3 +1228,25 @@ p{
   cursor: pointer;
 }
 
+#error-page-conatiner{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+#error-404{
+  font-size: 4rem;
+}
+
+.error-text-2{
+  margin-top: 30px;
+}
+
+#error-text-span{
+  color: rgb(90, 90, 255);
+  cursor: pointer;
+}
