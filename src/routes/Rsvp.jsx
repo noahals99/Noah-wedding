@@ -2,6 +2,7 @@ import venueImg from '../../public/venueStock.jpeg'
 import {motion,useCycle,AnimatePresence} from 'framer-motion'
 import { languageContext } from './Root';
 import { useEffect, useState,useContext } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import axios from 'axios';
 import AsyncSelect from 'react-select/async'
@@ -173,11 +174,19 @@ function Rsvp() {
     const [listVisible, setListVisible] = useState(false);
     const [selectedSongs, setSelectedSongs] = useState([]);
     const [selectedSongsId, setSelectedSongsId] = useState([]);
+    const navigate = useNavigate();
     const [confirmedUsers, setConfirmedUsers] = useState([]);
     const [notGoingUsers, setNotGoingUsers] = useState([]);
     const [dietaryRestrictionsUsers, setDietaryRestrictionsUsers] = useState({});
     const {userData,setIsUserKeyLoading, toggleUserDataHasChanged} = useContext(UserContext);
     const [isConfirmSubmitVisible, setIsConfirmSubmitVisible] = useState(false);
+
+
+    useEffect(() => {
+        if(!userData){
+            navigate("/")
+        }
+    }, [userData])
 
     const checkVisibility = () => {
         if(isConfirmSubmitVisible === true){
@@ -422,24 +431,42 @@ function Rsvp() {
                                                 <div>
                                                     {(Object.keys(selectedSongs).length != 2) ?
                                                         <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of 2</p>:
-                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
+                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {2}</p>
                                                     }
                                                 </div>
                                             }
                                             
-                                            
-                                            <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                            <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
-                                            <div id='search-results-container' style={isListVisible()}>
-                                                {searchResults &&
-                                                searchResults.map((item) => {
-                                                    return(
-                                                        <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
-                                                    )
-                                                })
+                                            {(userData.group) ? 
+                                                <>
+                                                    <p id='search-song-title'>SEARCH FOR A SONG</p>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <div id='search-results-container' style={isListVisible()}>
+                                                        {searchResults &&
+                                                        searchResults.map((item) => {
+                                                            return(
+                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                            )
+                                                        })
 
-                                                }
-                                            </div>
+                                                        }
+                                                    </div>
+                                                </>:
+                                                <>
+                                                    <p id='search-song-title'>SEARCH FOR A SONG</p>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <div id='search-results-container' style={isListVisible()}>
+                                                        {searchResults &&
+                                                        searchResults.map((item) => {
+                                                            return(
+                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                            )
+                                                        })
+
+                                                        }
+                                                    </div>
+                                                </>
+                                            }
+                                            
                                             
                                         </div>
                                         <div className='submit-button-section'>

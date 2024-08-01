@@ -142,7 +142,14 @@ function Home() {
                                 
                                 
                             </motion.p>
-                            <p id='incorrect-user-text'>IS THIS NOT YOU? <span id='incorrect-user-text-span' onClick={() => setIsUserSelectPopupVisible(true)}>SWITCH ACCOUNTS</span></p>
+                            <motion.p 
+                                id='incorrect-user-text'
+                                initial={false}
+                                variants={variantHolder}
+                                animate={"selected"}
+                            >
+                                IS THIS NOT YOU? <span id='incorrect-user-text-span' onClick={() => setIsUserSelectPopupVisible(true)}>SWITCH ACCOUNTS</span>
+                            </motion.p>
                         </div> :
                         <div id='welcome-message-container'>
                         <motion.p
