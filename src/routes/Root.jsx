@@ -62,7 +62,7 @@ function Root(){
     }
 
     return(
-        <UserContext.Provider value={{userKey, setUserKey, userData, hasSeenHome, setHasSeenHome, setIsUserKeyLoading, toggleUserDataHasChanged, isUserKeyLoading}}>
+        <UserContext.Provider value={{userKey, setUserData, setUserKey, userData, hasSeenHome, setHasSeenHome, setIsUserKeyLoading, toggleUserDataHasChanged, isUserKeyLoading}}>
             <languageContext.Provider value={{language, setLanguage}}>
                 <Outlet/>
             </languageContext.Provider>

@@ -4,6 +4,7 @@ import { languageContext, UserContext } from './Root';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import PasswordPopup from '../components/PasswordPopup';
 import { adminId } from './Root';
+import UserSelectPopup from '../components/UserSelectPopup';
 
 
 const transition = {
@@ -35,6 +36,9 @@ function Home() {
     const {userKey, setUserKey, userData, setHasSeenHome, setIsUserKeyLoading} = useContext(UserContext);
     const [searchParams] = useSearchParams();
     const [isPassPopupVisible, setIsPassPopupVisible] = useState(false);
+    const [isRsvpClick, setIsRsvpClick] = useState(false);
+    const [isUserSelectPopupVisible, setIsUserSelectPopupVisible] = useState(false);
+    
 
 
     useEffect(() => {
@@ -52,6 +56,8 @@ function Home() {
         }
         
     },[])
+
+    
 
 
     const togglePopupVisibility = () => {
@@ -89,19 +95,25 @@ function Home() {
     }
 
 
-    const handleSelection = (menuItem) => {
+    const handleSelection = (menuItem, noLogin) => {
         if(menuItem !== "ADMIN"){
-            setInputBlockingboxStatus("block");
-            setSelectedItem(menuItem);
-            setVariantHolder(transition)
+            if(noLogin && menuItem === 'RSVP'){
+                setIsRsvpClick(true);
+                setIsUserSelectPopupVisible(true);
+            }else{
+                setInputBlockingboxStatus("block");
+                setSelectedItem(menuItem);
+                setVariantHolder(transition)
+                
+                
             
+                // Navigate after a 1-second delay
+                setTimeout(() => {
+                    setWhileHoverToggle(0.4);
+                    navigate(`/${menuItem.toLowerCase()}`);
+                }, 2000);
+            }
             
-        
-            // Navigate after a 1-second delay
-            setTimeout(() => {
-                setWhileHoverToggle(0.4);
-                navigate(`/${menuItem.toLowerCase()}`);
-            }, 2000);
         }else{
             togglePopupVisibility();
         }
@@ -130,6 +142,7 @@ function Home() {
                                 
                                 
                             </motion.p>
+                            <p id='incorrect-user-text'>IS THIS NOT YOU? <span id='incorrect-user-text-span' onClick={() => setIsUserSelectPopupVisible(true)}>SWITCH ACCOUNTS</span></p>
                         </div> :
                         <div id='welcome-message-container'>
                         <motion.p
@@ -279,14 +292,14 @@ function Home() {
                         </div>
                     :
                         <ul id="selection-menu">
-                            {['INFORMATION', 'VENUE', 'LODGING'].map((menuItem) => (
+                            {['INFORMATION', 'VENUE', 'LODGING', 'RSVP', 'REGISTRY'].map((menuItem) => (
                                 <motion.li
                                     key={menuItem}
                                     className="selection-menu-item"
                                     initial={false}
                                     variants={variantHolder}
                                     animate={isSelected(menuItem) ? "selected" : "notSelected"}
-                                    onClick={() => handleSelection(menuItem)}
+                                    onClick={() => handleSelection(menuItem, true)}
                                     whileHover={{opacity: whileHoverToggle,
                                     transition:{
                                         duration: 0.5
@@ -303,6 +316,7 @@ function Home() {
                     
                 </div>
             </div>
+            <UserSelectPopup isRsvpClick={isRsvpClick} setWhileHoverToggle={setWhileHoverToggle} setInputBlockingboxStatus={setInputBlockingboxStatus} setVariantHolder={setVariantHolder} setSelectedItem={setSelectedItem} isUserSelectPopupVisible={isUserSelectPopupVisible} setIsUserSelectPopupVisible={setIsUserSelectPopupVisible}></UserSelectPopup>
         </div>
     );
 }
