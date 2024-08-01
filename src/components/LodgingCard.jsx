@@ -37,9 +37,9 @@ const cardVariants = {
   };
 
 
-const swipeConfidenceThreshold = 10000;
+const swipeConfidenceThreshold = 50;
 const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
+  return Math.abs(offset) * velocity * 0.05;
 };
 
 function LodgingCard({item}) {
