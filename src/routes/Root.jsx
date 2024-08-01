@@ -35,11 +35,10 @@ function Root(){
                 method: "GET",
                 url: apiUrl,
                 headers: { 
-                  'Authorization': `Bearer ${window.localStorage.getItem("access_token")}`, 
-                  'Content-Type': 'application/x-www-form-urlencoded'
                 }
               })
                 .then((response) => {
+                    console.log(response)
                     setUserData(response.data)
                     if((response.data.language.toUpperCase() === "ENGLISH") || (response.data.language.toUpperCase() === "SPANISH")){
                         setLanguage(response.data.language.toUpperCase());

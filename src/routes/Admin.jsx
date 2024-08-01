@@ -46,6 +46,7 @@ function Admin(){
     const [dataHasChanged, setDataHasChanged] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isPopupVisible, setIsPopupVisible] =useState(false);
+    const wedbsiteURL = "https://alsina-wedding.netlify.app/";
     const navigate = useNavigate();
 
     useEffect(()=> {
@@ -113,21 +114,37 @@ function Admin(){
         }
     }
 
+    const handleRsvpClick = () => {
+        navigate('/admin-setup/rsvp')
+    }
+
+    const handleCopyClick = (id) => {
+        navigator.clipboard.writeText(id)
+    }
+    const handleCopyLinkClick = (id) => {
+        navigator.clipboard.writeText(`${wedbsiteURL}?id=${id}`)
+    }
+
     return(
         <div className='app-background-color'>
             <GroupsButton isVisible={isVisible} toggleVisible={toggleVisible}></GroupsButton>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
+            <button id="admin-rsvp-button" onClick={handleRsvpClick}>RSVP</button>
             <div id="user-cards-container">
                 {usersData &&
                     usersData.map((user) => {
                         return(
-                            <div key={user._id} className="user-line" onClick={() => handleClick(user)}>
+                            <div key={user._id} className="user-line">
+                                <button onClick={() => handleClick(user)}>Edit</button>
                                 <div className="user-line-name-container">
                                     <p className="user-line-first-name">{user.firstName}</p>
                                     <p>{user.lastName}</p>
                                 </div>
-                                <p className="user-line-id">{user._id}</p>
-                                <p>{user.lastName}</p>
+                                <div>
+                                    <button onClick={() => handleCopyClick(user._id)}>copy id</button>
+                                    <button onClick={() => handleCopyLinkClick(user._id)}>copy id link</button>
+                                </div>
+                                
                             </div>
                         )
                     })
@@ -139,7 +156,7 @@ function Admin(){
             </div>
             <div id="user-popup-admin" style={getPopupVisibility()} onClick={handleBackgroundClick}>
                 {(selectedUser)&&
-                    <UserCard usersDataObject={selectedUser} toggleDataHasChanged={toggleDataHasChanged} dataHasChanged={dataHasChanged}></UserCard>
+                    <UserCard toggleIsPopupVisible={toggleIsPopupVisible} usersDataObject={selectedUser} toggleDataHasChanged={toggleDataHasChanged} dataHasChanged={dataHasChanged}></UserCard>
                 }
             </div>
         </div>

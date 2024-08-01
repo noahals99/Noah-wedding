@@ -144,7 +144,7 @@ const DeleteButton = ({id, toggleDataHasChanged, RsvpId}) => {
 
 
 
-function UserCard({usersDataObject, toggleDataHasChanged, dataHasChanged}){
+function UserCard({toggleIsPopupVisible, usersDataObject, toggleDataHasChanged, dataHasChanged}){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -238,6 +238,8 @@ function UserCard({usersDataObject, toggleDataHasChanged, dataHasChanged}){
             }
         })
         .then((response) => {
+            toggleDataHasChanged();
+            toggleIsPopupVisible();
         })
         .catch((error) => {
             console.log(error)
