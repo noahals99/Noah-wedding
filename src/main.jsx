@@ -16,6 +16,7 @@ import Bachelor from './routes/Bachelor.jsx'
 import Bachelorette from './routes/Bachelorette.jsx'
 import Groups from './routes/Groups.jsx'
 import AdminRsvp from './routes/AdminRsvp.jsx'
+import AdminSongRequests from './routes/AdminSongRequests.jsx'
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/admin-setup/rsvp",
         element: <AdminRsvp/>
+      },
+      {
+        path: "/admin-setup/song-requests",
+        element: <AdminSongRequests/>
       },
     ]
   }
