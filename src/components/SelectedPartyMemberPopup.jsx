@@ -127,6 +127,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
                         {(userData)&&
                             <div>
                                 <div className="img-slideshow-container">
+                                    <div id="img-background"></div>
                                     <AnimatePresence initial={false} custom={direction}>
                                         <motion.img
                                             key={page}

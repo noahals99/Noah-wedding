@@ -77,6 +77,7 @@ function LodgingCard({item}) {
                     <a className='subsection-info lodging-card-website' id='address-links' target="_blank" href={item.link}>WEBSITE</a>
                 </div>
                 <div className="lodging-img-container">
+                    <div id="img-background-lodging"></div>
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.img
                             key={`${item.name}${page}`}

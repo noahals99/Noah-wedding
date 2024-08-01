@@ -213,9 +213,14 @@ function Lodging() {
                                 
                             >
                                 
+                                
                                 {lodgingData.map((item) => {
                                     return(
-                                        <LodgingCard item={item} key={`lodging${item.name}`}></LodgingCard>
+                                        <div>
+                                            
+                                            <LodgingCard item={item} key={`lodging${item.name}`}></LodgingCard>
+                                        </div>
+                                        
                                     ) 
                                 })
                                 }
