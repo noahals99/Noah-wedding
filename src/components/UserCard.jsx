@@ -144,7 +144,7 @@ const DeleteButton = ({id, toggleDataHasChanged, RsvpId}) => {
 
 
 
-function UserCard({toggleIsPopupVisible, usersDataObject, toggleDataHasChanged, dataHasChanged}){
+function UserCard({isPopupVisible, toggleIsPopupVisible, usersDataObject, toggleDataHasChanged, dataHasChanged}){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -152,6 +152,18 @@ function UserCard({toggleIsPopupVisible, usersDataObject, toggleDataHasChanged, 
     const [language, setLanguage] = useState("");
     const [weddingRole, setWeddingRole] = useState("");
     const [isEditing, setIsEditing] = useState(false);
+
+    useEffect(() => {
+        if(isPopupVisible === false){
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setFamilyName("");
+            setLanguage("");
+            setWeddingRole("");
+            setIsEditing("");
+        }
+    },[isPopupVisible])
 
     const toggleIsEditing = () => {
         if( isEditing === true){

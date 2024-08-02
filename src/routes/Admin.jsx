@@ -162,7 +162,7 @@ function Admin(){
             </div>
             <div id="user-popup-admin" style={getPopupVisibility()} onClick={handleBackgroundClick}>
                 {(selectedUser)&&
-                    <UserCard toggleIsPopupVisible={toggleIsPopupVisible} usersDataObject={selectedUser} toggleDataHasChanged={toggleDataHasChanged} dataHasChanged={dataHasChanged}></UserCard>
+                    <UserCard isPopupVisible={isPopupVisible} toggleIsPopupVisible={toggleIsPopupVisible} usersDataObject={selectedUser} toggleDataHasChanged={toggleDataHasChanged} dataHasChanged={dataHasChanged}></UserCard>
                 }
             </div>
         </div>
