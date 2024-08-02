@@ -930,6 +930,7 @@ p{
 
 .img-slideshow-container{
   display: flex;
+  width: 100%;
 }
 
 #img-background{

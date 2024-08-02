@@ -150,7 +150,7 @@ function Info() {
         if(isPopupVisible === true){
             return {"overflow": "hidden"}
         }else{
-            return {"overflow-y": "auto", "overflow-x": "hidden"}
+            return {"overflowY": "auto", "overflowX": "hidden"}
         }
     }
 

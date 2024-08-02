@@ -125,7 +125,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
                 <motion.div variants={popupVariants} animate={isPopupVisible ? "visible" : "notVisible" } initial={false} className="party-member-popup-aligner" onMouseDown={handleclick}>
                     <motion.div  variants={popupVariantsMain} animate={isPopupVisible ? "visible" : "notVisible" } initial={false}  className="party-member-popup-container">
                         {(userData)&&
-                            <div>
+                            <>
                                 <div className="img-slideshow-container">
                                     <div id="img-background"></div>
                                     <AnimatePresence initial={false} custom={direction}>
@@ -178,7 +178,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
                                     <p className="popup-description">{userData.description}</p>
                                 </div>
                                 
-                            </div>
+                            </>
                         }
                 
                         
