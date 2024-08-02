@@ -46,7 +46,7 @@ function Admin(){
     const [dataHasChanged, setDataHasChanged] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isPopupVisible, setIsPopupVisible] =useState(false);
-    const wedbsiteURL = "https://alsina-wedding.netlify.app/";
+    const wedbsiteURL = "https://noah-ale.info/";
     const navigate = useNavigate();
 
     useEffect(()=> {
