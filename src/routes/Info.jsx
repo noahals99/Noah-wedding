@@ -146,10 +146,18 @@ function Info() {
         }
     }
 
+    const getNoScroll = () => {
+        if(isPopupVisible === true){
+            return {"overflow": "hidden"}
+        }else{
+            return {"overflow-y": "auto", "overflow-x": "hidden"}
+        }
+    }
+
 
     return(
         
-        <div className='app-background-color noselect'>
+        <div className='app-background-color noselect' style={getNoScroll()}>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <motion.div id="Venue-container"  variants={imgVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
                 <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/coverphoto1.JPEG"} id='venue-img' style={{objectPosition: `70% ${(50+(0.2*((width/1488)*100))).toString()}%`}}></img>
