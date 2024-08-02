@@ -130,6 +130,7 @@ function Admin(){
             <GroupsButton isVisible={isVisible} toggleVisible={toggleVisible}></GroupsButton>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <button id="admin-rsvp-button" onClick={handleRsvpClick}>RSVP</button>
+            <button id="admin-songs-button" onClick={handleRsvpClick}>Songs</button>
             <div id="user-cards-container">
                 {usersData &&
                     usersData.map((user) => {

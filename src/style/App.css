@@ -387,6 +387,14 @@ p{
   position: absolute;
   right: 100px;
   top: 30px;
+  cursor: pointer;
+}
+
+#admin-songs-button{
+  position: absolute;
+  right: 160px;
+  top: 30px;
+  cursor: pointer;
 }
 
 .user-card-aligner{
