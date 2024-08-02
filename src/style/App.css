@@ -1347,6 +1347,11 @@ p{
   margin-bottom: 100px;
 }
 
+@media screen and (max-width: 485px) {
+  #widget-container{
+    margin-top: -190px;
+  }
+}
 .subsection-container{
   width: 100vw;
   margin: 0;
