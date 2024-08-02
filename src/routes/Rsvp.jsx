@@ -181,6 +181,12 @@ function Rsvp() {
     const {userData,setIsUserKeyLoading, toggleUserDataHasChanged} = useContext(UserContext);
     const [isConfirmSubmitVisible, setIsConfirmSubmitVisible] = useState(false);
 
+    useEffect(() => {
+        if(!userData){
+            navigate("/");
+        }
+    },[])
+
 
     useEffect(() => {
         if(!userData){
@@ -228,7 +234,9 @@ function Rsvp() {
             }
         })
         .then((response) => {
-            toggleUserDataHasChanged();
+            toggleIsConfirmSubmitVisible();
+            navigate("/");
+            
         })
         .catch((error) => {
             console.log(error)
