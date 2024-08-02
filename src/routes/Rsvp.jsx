@@ -234,8 +234,14 @@ function Rsvp() {
             }
         })
         .then((response) => {
+            toggleUserDataHasChanged();
             toggleIsConfirmSubmitVisible();
-            navigate("/");
+            setTimeout(() => {
+                navigate("/");
+            },1000)
+
+            
+
             
         })
         .catch((error) => {
