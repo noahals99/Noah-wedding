@@ -187,13 +187,13 @@ function Home() {
                     {language === 'ENGLISH' && (
                         <>
                             <p id="home-page-title">NOAH & ALE</p>
-                            <p id="home-page-subtitle">SEPTEMBER 10TH</p>
+                            <p id="home-page-subtitle">JUNE 27TH</p>
                         </>
                     )}
                     {language === 'SPANISH' && (
                         <>
                             <p id="home-page-title">NOAH & ALE</p>
-                            <p id="home-page-subtitle">SEPTIEMBRE 10TH</p>
+                            <p id="home-page-subtitle">JUNE 27TH</p>
                         </>
                     )}
                 </motion.div>

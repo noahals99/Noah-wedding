@@ -38,6 +38,7 @@
 }
 
 #home-page-title-container{
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
