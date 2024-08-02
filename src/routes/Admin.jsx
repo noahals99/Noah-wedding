@@ -118,6 +118,11 @@ function Admin(){
         navigate('/admin-setup/rsvp')
     }
 
+    
+    const handleSongsClick = () => {
+        navigate('/admin-setup/song-requests')
+    }
+
     const handleCopyClick = (id) => {
         navigator.clipboard.writeText(id)
     }
@@ -130,7 +135,7 @@ function Admin(){
             <GroupsButton isVisible={isVisible} toggleVisible={toggleVisible}></GroupsButton>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <button id="admin-rsvp-button" onClick={handleRsvpClick}>RSVP</button>
-            <button id="admin-songs-button" onClick={handleRsvpClick}>Songs</button>
+            <button id="admin-songs-button" onClick={handleSongsClick}>Songs</button>
             <div id="user-cards-container">
                 {usersData &&
                     usersData.map((user) => {
