@@ -53,6 +53,29 @@ const infoVariants = {
     }
 }
 
+const ZolaRegistry = () => {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.id = 'zola-wjs';
+        script.async = true;
+        script.src = 'https://widget.zola.com/js/widget.js';
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
+    return (
+        <a 
+            className="zola-registry-embed" 
+            href="www.zola.com/registry/alsinaramirezwedding" 
+            data-registry-key="alsinaramirezwedding"
+        >
+            Our Zola Wedding Registry
+        </a>
+    );
+};
 
 
 
@@ -83,6 +106,9 @@ function Registry() {
 
                 {language === 'ENGLISH' && (
                     <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
+                        <div id='widget-container'>
+                            <ZolaRegistry />
+                        </div>
                         
                     </motion.div>
                 )}
