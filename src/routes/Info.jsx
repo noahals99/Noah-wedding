@@ -176,11 +176,11 @@ function Info() {
                     <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
                         
                         
-                        <div className='subsection'>
+                        <div className='subsection info-section'>
                             <p className='subsection-title'>DATE</p>
                             <p className='subsection-info'>JUNE 27, 2025</p>
                         </div>
-                        <div className='subsection'>
+                        <div className='subsection info-section'>
                             <p className='subsection-title'>LOCATION</p>
                             <a className='subsection-info' id='address-links' target="_blank" href={"https://www.google.com/maps/place/Evergreen+Meadows+Venue/@47.5525436,-121.8125228,15z/data=!4m2!3m1!1s0x0:0xa3406adafb132675?sa=X&ved=1t:2428&ictx=111&cshid=1721239427733555"}>5510 396TH DR SE, SNOQUALMIE, WA 98065</a>
                         </div>

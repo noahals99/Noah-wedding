@@ -74,5 +74,104 @@
         ],
         "name": "Victoria Alsina",
         "description": "ENTER DESCRIPTION"
-    }           
+    },
+    "MOLLIE": {
+        "slideshowImages": [
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/431BB3B8-ED54-4A50-B251-4CD7C582B0CC_Original-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/E6A5B7F1-33FD-4F95-B501-C524850CAD1F_Original-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_1743-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_1746-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_1752-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6295_Original-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6757_Original-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6853-min.JPG", "xOffset": 50, "yOffset": 10},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6854-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6855-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6856-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6857-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6858-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Ale%26Molly/IMG_6859-min.JPEG", "xOffset": 50, "yOffset": 50}
+            
+        ],
+        "name": "Mollie",
+        "description": "ENTER DESCRIPTION"
+    },
+    "TAYLOR": {
+        "slideshowImages": [
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/C61BBBF0-341D-45C9-9BDE-B9FD701BDB84-min.jpg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_1260-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_2527-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_2764-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_5008-min.jpeg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_6110-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_6164-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_6460-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_7020-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/IMG_7561-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor%26Ale/Tezza-7540-min.JPEG", "xOffset": 50, "yOffset": 50}
+            
+        ],
+        "name": "Taylor Newton",
+        "description": "ENTER DESCRIPTION"
+    },
+    "ELIZABETH": {
+        "slideshowImages": [
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/2020-03-08+19_22_18.577-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/2020-03-10+17_35_39.360-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/DSC_0199-min.jpeg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/DSC_0938-min.jpeg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_1293-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_1841-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_2027-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_3007-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_4904-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_5633-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_5673-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_6718-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_7017-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_8842-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/IMG_8883-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz%26Ale/Tezza-3359-min.jpg", "xOffset": 50, "yOffset": 50}
+            
+            
+        ],
+        "name": "Elizabeth Seaver",
+        "description": "ENTER DESCRIPTION"
+    },
+    "KATIE": {
+        "slideshowImages": [
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/DSC_0733-min.JPG", "xOffset": 50, "yOffset": 100},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/FullSizeRender-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_0178-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_0452-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_2069-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_4418-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_4773-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_7936-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_9519-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie%26Ale/IMG_9686-min.JPEG", "xOffset": 50, "yOffset": 50}
+        ],
+        "name": "Katie Lavelle",
+        "description": "ENTER DESCRIPTION"
+    },
+    "BRIANA": {
+        "slideshowImages": [
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_0458-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_2603-min.jpeg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4376-min.JPG", "xOffset": 0, "yOffset": 80},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4417-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4418-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4431-min.JPG", "xOffset": 50, "yOffset": 20},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4561-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_4846-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_5003-min.JPG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/IMG_8790-min.JPG", "xOffset": 50, "yOffset": 10},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/scan108981-min.JPEG", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/Tezza-0506-min.jpg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/Tezza-2701-min.jpg", "xOffset": 50, "yOffset": 50},
+            {"link":"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna%26Ale/Tezza-7283-min.JPG", "xOffset": 50, "yOffset": 50}
+        ],
+        "name": "Briana Wagner",
+        "description": "ENTER DESCRIPTION"
+    }          
 }

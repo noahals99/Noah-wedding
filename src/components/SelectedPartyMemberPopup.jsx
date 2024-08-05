@@ -90,7 +90,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
     }else{
         imageIndex = wrap(0, 0, page);
     }
-    
+    /*
     useEffect(() => {
         const interval = setInterval(() => {
             paginate(1);
@@ -98,6 +98,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
 
         return () => clearInterval(interval);
     },[page])
+    */
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);

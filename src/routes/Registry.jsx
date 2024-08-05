@@ -105,7 +105,7 @@ function Registry() {
             <div id='venue-info-section'>
 
                 {language === 'ENGLISH' && (
-                    <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
+                    <motion.div className='subsection-container registry-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
                         <div id='widget-container'>
                             <ZolaRegistry />
                         </div>

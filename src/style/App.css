@@ -1356,11 +1356,25 @@ p{
 .subsection-container{
   width: 100vw;
   margin: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-top: 25px;
+  
+}
+
+.registry-container{
+  width: 100vw;
+  margin: 0;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   margin-top: 25px;
   
+}
+
+.info-section{
+  width: 50%;
 }
 
 #zola-registry-iframe-4244808250834{
