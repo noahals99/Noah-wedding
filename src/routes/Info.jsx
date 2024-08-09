@@ -227,28 +227,61 @@ function Info() {
                 )}
                 {language === 'SPANISH' && (
                     <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                        <div className='subsection'>
-                            <p className='subsection-title'>NOMBRE</p>
-                            <p className='subsection-info'>CHATEAU LILL</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>DIRECCIÓN</p>
-                            <p className='subsection-info'>14208 REDMOND - WOODINVILLE RD NE, REDMOND, WA 98052</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>CEREMONIA</p>
-                            <p className='subsection-info'>CHATEAU LAWN</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>RECEPCIÓN</p>
-                            <p className='subsection-info'>CHATEAU TENT</p>
-                        </div>
-                    </motion.div>
+                        
+                        
+                    <div className='subsection info-section'>
+                        <p className='subsection-title'>DATE</p>
+                        <p className='subsection-info'>JUNE 27, 2025</p>
+                    </div>
+                    <div className='subsection info-section'>
+                        <p className='subsection-title'>LOCATION</p>
+                        <a className='subsection-info' id='address-links' target="_blank" href={"https://www.google.com/maps/place/Evergreen+Meadows+Venue/@47.5525436,-121.8125228,15z/data=!4m2!3m1!1s0x0:0xa3406adafb132675?sa=X&ved=1t:2428&ictx=111&cshid=1721239427733555"}>5510 396TH DR SE, SNOQUALMIE, WA 98065</a>
+                    </div>
+                    <div className='subsection-wedding-party'>
+                        <p className='subsection-title'>WEDDING PARTY</p>
+                        <p className='subsection-info-small'>CLICK ON PICTURES FOR MORE INFORMATION</p>
+                        <motion.ul
+                            variants={container}
+                            initial="hidden"
+                            animate="visible"
+                            className='image-list-container'
+                        >
+                            {imgLinks.map((data, index) => {
+
+                                return(
+                                    <motion.li key={index}   variants={item} className='image-list-item'>
+                                        <WeddingPartyPicutre popupIsClosing={popupIsClosing} toggleVisibility={toggleVisibility} userData={userData} setSelectedUser={setSelectedUser} pictureLink={data.picture} name={data.name} role={data.role}></WeddingPartyPicutre>
+                                    </motion.li>
+                                )
+                            })}
+                        </motion.ul>
+                        <motion.ul
+                            variants={containerBachelorette}
+                            initial="hidden"
+                            animate="visible"
+                            className='image-list-container'
+                        >
+                            {imgLinksBachelorette.map((data, index) => {
+
+                                return(
+                                    <motion.li key={index}   variants={item} className='image-list-item'>
+                                        <WeddingPartyPicutre popupIsClosing={popupIsClosing} toggleVisibility={toggleVisibility} userData={userData} setSelectedUser={setSelectedUser} pictureLink={data.picture} name={data.name} role={data.role}></WeddingPartyPicutre>
+                                    </motion.li>
+                                )
+                            })}
+                        </motion.ul>
+                    </div>
+                    <div className='timeline-subsection'>
+                        <p className='subsection-title timeline-title'>TIMELINE</p>
+                        <Timeline language={language}></Timeline>
+                    </div>
+                    
+                </motion.div>
                 )}
                 
             </div>
             
-            <SelectedPartyMemberPopup popupIsClosing={popupIsClosing} setPopupIsClosing={setPopupIsClosing} isPopupVisible={isPopupVisible} toggleVisibility={toggleVisibility} userData={selectedUser}></SelectedPartyMemberPopup>
+            <SelectedPartyMemberPopup language={language} popupIsClosing={popupIsClosing} setPopupIsClosing={setPopupIsClosing} isPopupVisible={isPopupVisible} toggleVisibility={toggleVisibility} userData={selectedUser}></SelectedPartyMemberPopup>
         </div>
     )
 }

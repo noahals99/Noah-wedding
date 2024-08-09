@@ -229,22 +229,26 @@ function Lodging() {
                     </motion.div>
                 )}
                 {language === 'SPANISH' && (
-                    <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                        <div className='subsection'>
-                            <p className='subsection-title'>NOMBRE</p>
-                            <p className='subsection-info'>CHATEAU LILL</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>DIRECCIÓN</p>
-                            <p className='subsection-info'>14208 REDMOND - WOODINVILLE RD NE, REDMOND, WA 98052</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>CEREMONIA</p>
-                            <p className='subsection-info'>CHATEAU LAWN</p>
-                        </div>
-                        <div className='subsection'>
-                            <p className='subsection-title'>RECEPCIÓN</p>
-                            <p className='subsection-info'>CHATEAU TENT</p>
+                    <motion.div className='subsection-container lodging-page'variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
+                        <div className='subsection-lodging-container'>
+                            <p className='subsection-title lodging-title'>LODGING UNDER 35MIN FROM VENUE</p>
+                            <div
+                                className='lodging-subsection'
+                                
+                            >
+                                
+                                
+                                {lodgingData.map((item) => {
+                                    return(
+                                        <div>
+                                            
+                                            <LodgingCard item={item} key={`lodging${item.name}`}></LodgingCard>
+                                        </div>
+                                        
+                                    ) 
+                                })
+                                }
+                            </div>
                         </div>
                     </motion.div>
                 )}

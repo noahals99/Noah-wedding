@@ -80,7 +80,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity * 0.05;
 };
 
-function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, popupIsClosing, setPopupIsClosing}){
+function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, popupIsClosing, setPopupIsClosing, language}){
     const [[page, direction], setPage] = useState([0, 0]);
     const [isDragging, setIsDragging] = useState("")
     let imageIndex = wrap(0, 0, page);
@@ -90,7 +90,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
     }else{
         imageIndex = wrap(0, 0, page);
     }
-    /*
+
     useEffect(() => {
         const interval = setInterval(() => {
             paginate(1);
@@ -98,7 +98,7 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
 
         return () => clearInterval(interval);
     },[page])
-    */
+
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
@@ -176,7 +176,11 @@ function SelectedPartyMemberPopup({userData, toggleVisibility, isPopupVisible, p
                                 </div>
                                 <div className="slideshow-popup-text-container">
                                     <p className="popup-title">{userData.name}</p>
-                                    <p className="popup-description">{userData.description}</p>
+                                    {language === "ENGLISH" ? 
+                                        <p className="popup-description">{userData.description}</p>:
+                                        <p className="popup-description">{userData.descriptionSpanish}</p>
+                                    }
+                                    
                                 </div>
                                 
                             </>
