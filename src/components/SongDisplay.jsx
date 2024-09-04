@@ -1,8 +1,9 @@
-function SongDisplay({maxAmount, item, setSongSearch, isListVisible, setSelectedSongs, selectedSongs}) {
+function SongDisplay({maxAmount, item, setSongSearch, isListVisible,selectedSongsId, setSelectedSongsId, setSelectedSongs, selectedSongs}) {
     const handleClick = (item) => {
         if((selectedSongs.indexOf(item) === -1) && (Object.keys(selectedSongs).length < maxAmount)){
             setSongSearch('')
             setSelectedSongs([...selectedSongs, item])
+            setSelectedSongsId([...selectedSongsId, item.id])
         }
         
     }

@@ -339,7 +339,6 @@ function Rsvp() {
     }
 
     const handleOnBlur = () => {
-        console.log("Blur")
         toggleListVisibility();
     }
 
@@ -446,7 +445,7 @@ function Rsvp() {
                                         <div className='subsection' id='song-subsection'>
                                             <p id='song-select-section-title' className='subsection-title'>WANT TO HEAR A SONG? SO DO WE! SUGGEST SOME...</p>
                                             <p className='subsection-info-small'>TAP A SELECTED SONG TO REMOVE</p>
-                                            <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}></SelectedSongsDisplay>
+                                            <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId}></SelectedSongsDisplay>
                                             {(userData.group) ? 
                                                 <div>
                                                     {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
@@ -470,9 +469,11 @@ function Rsvp() {
                                                         <div id='search-results-container' style={isListVisible()}>
                                                             {searchResults &&
                                                             searchResults.map((item) => {
-                                                                if(selectedSongs.indexOf(item) === -1){
+                                                                if(selectedSongsId.indexOf(item.id) === -1){
+                                                                    console.log(item);
+                                                                    console.log(selectedSongsId.indexOf(item.id));
                                                                   return(
-                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
                                                                     )  
                                                                 }
                                                                 
@@ -491,7 +492,7 @@ function Rsvp() {
                                                             searchResults.map((item) => {
                                                                 if(selectedSongs.indexOf(item) === -1){
                                                                    return(
-                                                                        <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                        <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
                                                                     ) 
                                                                 }
                                                                 
@@ -597,7 +598,7 @@ function Rsvp() {
                                         <div className='subsection' id='song-subsection'>
                                             <p id='song-select-section-title' className='subsection-title'>WANT TO HEAR A SONG? SO DO WE! SUGGEST SOME...</p>
                                             <p className='subsection-info-small'>TAP A SELECTED SONG TO REMOVE</p>
-                                            <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs}></SelectedSongsDisplay>
+                                            <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs} setSelectedSongsId={setSelectedSongsId}></SelectedSongsDisplay>
                                             {(userData.group) ? 
                                                 <div>
                                                     {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
@@ -623,7 +624,7 @@ function Rsvp() {
                                                             searchResults.map((item) => {
                                                                 if(selectedSongs.indexOf(item) === -1){
                                                                    return(
-                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs}  setSelectedSongsId={setSelectedSongsId} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
                                                                     ) 
                                                                 }
                                                                 
@@ -642,7 +643,7 @@ function Rsvp() {
                                                             searchResults.map((item) => {
                                                                 if(selectedSongs.indexOf(item) === -1){
                                                                    return(
-                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongsId={setSelectedSongsId} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
                                                                     ) 
                                                                 }
                                                                 

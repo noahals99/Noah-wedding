@@ -4,7 +4,11 @@ function SelectedSongsDisplay({selectedSongs, setSelectedSongs, setSelectedSongs
         let newList = selectedSongs.filter((item) => {
             return item.id != song.id
         })
-        setSelectedSongs(newList)
+        let newIdList = selectedSongsId.filter((item) => {
+            return item != song.id
+        })
+        setSelectedSongs(newList);
+        setSelectedSongsId(newIdList);
     }
     return(
         <div className="selected-songs-display">
