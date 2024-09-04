@@ -587,11 +587,6 @@ p{
   border-radius: 40px;
 }
 
-.song-display-container:hover{
-  background-color: rgb(160, 160, 160);
-  transition: 0.3s;
-}
-
 #search-song-title{
   margin-top: 20px;
 }
