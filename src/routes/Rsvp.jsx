@@ -338,6 +338,11 @@ function Rsvp() {
         
     }
 
+    const handleOnBlur = () => {
+        console.log("Blur")
+        toggleListVisibility();
+    }
+
 
     useEffect(()=> {
         toggleVisible(true);
@@ -349,7 +354,7 @@ function Rsvp() {
     }
 
     useEffect(() => {
-        if(searchResults){
+        if(searchResults && (listVisible === false)){
             toggleListVisibility()
         }
     },[searchResults])
@@ -460,7 +465,7 @@ function Rsvp() {
                                             {(userData.group) ? 
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
                                                     <div id='search-results-container-border-radius'>
                                                         <div id='search-results-container' style={isListVisible()}>
                                                             {searchResults &&
@@ -479,7 +484,7 @@ function Rsvp() {
                                                 </>:
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
                                                     <div id='search-results-container-border-radius' style={isListVisible()}>
                                                         <div id='search-results-container' style={isListVisible()}>
                                                             {searchResults &&
@@ -611,7 +616,7 @@ function Rsvp() {
                                             {(userData.group) ? 
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
                                                     <div id='search-results-container-border-radius'>
                                                         <div id='search-results-container' style={isListVisible()}>
                                                             {searchResults &&
@@ -630,7 +635,7 @@ function Rsvp() {
                                                 </>:
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
+                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
                                                     <div id='search-results-container-border-radius'>
                                                         <div id='search-results-container' style={isListVisible()}>
                                                             {searchResults &&
