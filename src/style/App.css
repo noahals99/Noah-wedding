@@ -651,6 +651,17 @@ p{
   background-color: rgb(160, 160, 160);
 }
 
+.selected-song-display-container-selected{
+  cursor:alias ;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-right: 10px;
+  gap: 10px;
+  background-color: rgb(160, 160, 160);
+}
+
 #song-subsection{
   position: relative;
   left: 0px;
