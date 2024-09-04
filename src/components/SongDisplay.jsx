@@ -12,7 +12,7 @@ function SongDisplay({maxAmount, item, setSongSearch, isListVisible,selectedSong
         if((selectedSongs.indexOf(item) === -1) && ((Object.keys(selectedSongs).length != maxAmount))){
             return "song-display-container"
         }else{
-            return "song-display-container-selected"
+            return "song-display-container"
         }
     }
     
