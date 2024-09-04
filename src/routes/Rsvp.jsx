@@ -320,12 +320,15 @@ function Rsvp() {
     }
 
     const toggleListVisibility = () => {
-        if(listVisible === true){
-            setListVisible(false);
-        }else{
-            
-            setListVisible(true);   
+        if(searchResults){
+            if(listVisible === true){
+                setListVisible(false);
+            }else{
+                
+                setListVisible(true);   
+            }
         }
+        
     }
 
     const onFocus = () => {
@@ -458,29 +461,39 @@ function Rsvp() {
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
                                                     <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
-                                                    <div id='search-results-container' style={isListVisible()}>
-                                                        {searchResults &&
-                                                        searchResults.map((item) => {
-                                                            return(
-                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
-                                                            )
-                                                        })
+                                                    <div id='search-results-container-border-radius'>
+                                                        <div id='search-results-container' style={isListVisible()}>
+                                                            {searchResults &&
+                                                            searchResults.map((item) => {
+                                                                if(selectedSongs.indexOf(item) === -1){
+                                                                  return(
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    )  
+                                                                }
+                                                                
+                                                            })
 
-                                                        }
+                                                            }
+                                                        </div>
                                                     </div>
                                                 </>:
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
                                                     <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
-                                                    <div id='search-results-container' style={isListVisible()}>
-                                                        {searchResults &&
-                                                        searchResults.map((item) => {
-                                                            return(
-                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
-                                                            )
-                                                        })
+                                                    <div id='search-results-container-border-radius' style={isListVisible()}>
+                                                        <div id='search-results-container' style={isListVisible()}>
+                                                            {searchResults &&
+                                                            searchResults.map((item) => {
+                                                                if(selectedSongs.indexOf(item) === -1){
+                                                                   return(
+                                                                        <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    ) 
+                                                                }
+                                                                
+                                                            })
 
-                                                        }
+                                                            }
+                                                        </div>
                                                     </div>
                                                 </>
                                             }
@@ -599,29 +612,39 @@ function Rsvp() {
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
                                                     <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
-                                                    <div id='search-results-container' style={isListVisible()}>
-                                                        {searchResults &&
-                                                        searchResults.map((item) => {
-                                                            return(
-                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
-                                                            )
-                                                        })
+                                                    <div id='search-results-container-border-radius'>
+                                                        <div id='search-results-container' style={isListVisible()}>
+                                                            {searchResults &&
+                                                            searchResults.map((item) => {
+                                                                if(selectedSongs.indexOf(item) === -1){
+                                                                   return(
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    ) 
+                                                                }
+                                                                
+                                                            })
 
-                                                        }
+                                                            }
+                                                        </div>
                                                     </div>
                                                 </>:
                                                 <>
                                                     <p id='search-song-title'>SEARCH FOR A SONG</p>
                                                     <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={toggleListVisibility}></input>
-                                                    <div id='search-results-container' style={isListVisible()}>
-                                                        {searchResults &&
-                                                        searchResults.map((item) => {
-                                                            return(
-                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
-                                                            )
-                                                        })
+                                                    <div id='search-results-container-border-radius'>
+                                                        <div id='search-results-container' style={isListVisible()}>
+                                                            {searchResults &&
+                                                            searchResults.map((item) => {
+                                                                if(selectedSongs.indexOf(item) === -1){
+                                                                   return(
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                    ) 
+                                                                }
+                                                                
+                                                            })
 
-                                                        }
+                                                            }
+                                                        </div>
                                                     </div>
                                                 </>
                                             }
