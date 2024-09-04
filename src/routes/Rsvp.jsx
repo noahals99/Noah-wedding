@@ -120,46 +120,50 @@ const GroupRsvp = ({ setNotGoingUsers, userData, addConfirmedUser, removeConfirm
         
     },[])
     return(
-        <div className='group-rsvp-box'>
-            
-            {userData.group.members.map((user, index) => {
-                return(
-                    <div key={`grouprsvp${index}${user._id}`} className='name-checkbox-container'>
-                        <div className='name-aligner'>
-                            <p>{user.firstName} {user.lastName}</p>
+        <div className='group-rsvp-box-aligner'>
+            <div className='group-rsvp-box'>
+                
+                {userData.group.members.map((user, index) => {
+                    return(
+                        <div key={`grouprsvp${index}${user._id}`} className='name-checkbox-container'>
+                            <div className='name-aligner'>
+                                <p>{user.firstName} {user.lastName}</p>
+                            </div>
+                            <CheckBox isRsvp={isRsvp} addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} addNotGoingUser={addNotGoingUser} removeNotGoingUser={removeNotGoingUser} userid={user._id}></CheckBox>
                         </div>
-                        <CheckBox isRsvp={isRsvp} addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} addNotGoingUser={addNotGoingUser} removeNotGoingUser={removeNotGoingUser} userid={user._id}></CheckBox>
-                    </div>
-                )
-            })
+                    )
+                })
 
-            }
+                }
+            </div>
         </div>
     )
 }
 
 const GroupDiet = ({userData, dietaryRestrictionsUsers, addDietaryRestrictionsUsers, removeDietaryRestrictionsUsers, setDietaryRestrictionsUsers}) => {
     return(
-        <div className='group-rsvp-box'>
-            
-            {userData.group.members.map((user, index) => {
-                return(
-                    <div key={`grouprsvp${index}${user._id}`} className='name-checkbox-container-diet'>
-                        <div className='name-container'>
-                            <div className='name-aligner'>
-                                <p>{user.firstName} {user.lastName}</p>
+        <div className='group-rsvp-box-aligner'>
+            <div className='group-rsvp-box'>
+                
+                {userData.group.members.map((user, index) => {
+                    return(
+                        <div key={`grouprsvp${index}${user._id}`} className='name-checkbox-container-diet'>
+                            <div className='name-container'>
+                                <div className='name-aligner'>
+                                    <p>{user.firstName} {user.lastName}</p>
+                                </div>
+                                <CheckBox addConfirmedUser={addDietaryRestrictionsUsers} removeConfirmedUser={removeDietaryRestrictionsUsers} userid={user._id}></CheckBox>
                             </div>
-                            <CheckBox addConfirmedUser={addDietaryRestrictionsUsers} removeConfirmedUser={removeDietaryRestrictionsUsers} userid={user._id}></CheckBox>
+                            
+                            {(user._id in dietaryRestrictionsUsers) &&
+                                <DietaryRestrictionsInput userId={user._id} dietaryRestrictionsUsers={dietaryRestrictionsUsers} setDietaryRestrictionsUsers={setDietaryRestrictionsUsers}></DietaryRestrictionsInput>
+                            }
                         </div>
-                        
-                        {(user._id in dietaryRestrictionsUsers) &&
-                            <DietaryRestrictionsInput userId={user._id} dietaryRestrictionsUsers={dietaryRestrictionsUsers} setDietaryRestrictionsUsers={setDietaryRestrictionsUsers}></DietaryRestrictionsInput>
-                        }
-                    </div>
-                )
-            })
+                    )
+                })
 
-            }
+                }
+            </div>           
         </div>
     )
 }

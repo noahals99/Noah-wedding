@@ -200,7 +200,7 @@ const AddUserButton = ({userData, members, groupId, toggleDataHasChanged}) => {
                     <p className="add-user-selected-text"></p>
                 }
             </div>
-            <div>
+            <div className="user-selection-outer-container">
                     {(userData) &&
                             <div className="user-selection-container" style={getStyle()}>
                                 {userData.map((user) => {
@@ -324,7 +324,7 @@ function GroupsCard({groupDataObject, toggleDataHasChanged, userData}){
                             {members.map((member) => {
                                 return(
                                     <div className="group-member-list" key={`member-list-${member._id}`}>
-                                        <p>{member.firstName}</p>
+                                        <p>{member.firstName} {member.lastName}</p>
                                         <div className="group-member-list-remove" onClick={() => handleRemoveFromList(member._id)}>
                                             <p>x</p>
                                         </div>

@@ -359,7 +359,6 @@ p{
 }
 
 .UserCard{
-  position: absolute;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -405,9 +404,10 @@ p{
 }
 
 .edit-button{
-  position: absolute;
-  top: -10px;
-  right: -30px;
+  position: relative;
+  margin-top: -50px;
+  right: -280px;
+  top: -5px;
   cursor: pointer;
 }
 
@@ -429,9 +429,9 @@ p{
 
 
 .delete-button{
-  position: absolute;
+  position: relative;
   top: -10px;
-  left: -10px;
+  left: -255px;
   cursor: pointer;
 }
 
@@ -700,6 +700,7 @@ p{
   display: flex;
 }
 
+
 .user-selection-container{
   background-color: whitesmoke;
   border: solid black;
@@ -711,10 +712,11 @@ p{
   right: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-height: 100px;
   scroll-behavior: auto;
+  overflow-y: scroll;
 }
 
 .user-selection-item{
@@ -789,6 +791,13 @@ p{
   padding-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  width: 300px;
+}
+
+.group-rsvp-box-aligner{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .checkbox-conatiner{
@@ -868,6 +877,7 @@ p{
 
 .subsection-rsvp{
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #address-links{
