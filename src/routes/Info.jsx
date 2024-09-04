@@ -111,7 +111,7 @@ function Info() {
         {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/ANDREW.JPEG", name:"ANDREW", role: "GENERAL"},
         {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/MICHAEL.JPEG", name:"MICHAEL", role: "GENERAL"},
         {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/THEO.JPEG", name:"THEO", role: "GENERAL"},
-        {picture:"../profile.jpg", name:"HUNTER", role: "GENERAL"},
+        {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/HUNTER.JPEG", name:"HUNTER", role: "GENERAL"},
         
     ]
 
