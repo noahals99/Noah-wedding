@@ -153,7 +153,6 @@ p{
 #info-section{
   background-color: whitesmoke;
   width: 100vw;
-  height: 220%;
   z-index: 3;
 }
 
@@ -1370,7 +1369,8 @@ p{
   align-items: flex-start;
   overflow: hidden;
   margin-top: 25px;
-  
+  margin-bottom: 100px;
+  display: flex;
 }
 
 .registry-container{

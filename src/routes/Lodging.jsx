@@ -216,9 +216,9 @@ function Lodging() {
                                 
                                 {lodgingData.map((item) => {
                                     return(
-                                        <div>
+                                        <div key={`lodging${item.name}English`}>
                                             
-                                            <LodgingCard item={item} key={`lodging${item.name}`}></LodgingCard>
+                                            <LodgingCard item={item}></LodgingCard>
                                         </div>
                                         
                                     ) 
