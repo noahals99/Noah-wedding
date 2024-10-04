@@ -184,16 +184,13 @@ function Lodging() {
         },
     ]
 
-    useEffect(()=> {
-        toggleVisible(true);
-    },[])
 
     return(
         
         <div className='app-background-color noselect'>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <motion.div id="Venue-container"  variants={imgVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/beachBackgroundImage.JPEG"} id='venue-img'></img>
+                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/beachBackgroundImage.JPEG"} onLoad={() => toggleVisible(true)} id='venue-img'></img>
                 
                 {language === 'ENGLISH' && (
                     <motion.p className='page-title'  variants={titleVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>LODGING</motion.p>

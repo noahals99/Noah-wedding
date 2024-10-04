@@ -344,10 +344,6 @@ function Rsvp() {
     }
 
 
-    useEffect(()=> {
-        toggleVisible(true);
-    },[])
-
 
     const handleSearchChange = (event) => {
         setSongSearch(event.target.value)
@@ -364,7 +360,7 @@ function Rsvp() {
         <div className='app-background-color noselect'>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <motion.div id="Venue-container"  variants={imgVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/roadBackgrond.JPEG"} style={{objectPosition: '50% 62%'}} id='venue-img'></img>
+                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/roadBackgrond.JPEG"} onLoad={() => toggleVisible(true)} style={{objectPosition: '50% 62%'}} id='venue-img'></img>
                 
                 {language === 'ENGLISH' && (
                     <motion.p className='page-title'  variants={titleVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>RSVP</motion.p>
