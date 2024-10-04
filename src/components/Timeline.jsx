@@ -113,8 +113,8 @@ function Timeline({language}) {
                         >
                             <div>
                                 <p>{item.time}</p>
-                                {(language === "English") ? <p>{item.description}</p> : 
-                                    <p>{item.descriptionSpanish}</p>
+                                {(language === "SPANISH") ? <p>{item.descriptionSpanish}</p> : 
+                                    <p>{item.description}</p>
                                 }
                                 
                             </div>
