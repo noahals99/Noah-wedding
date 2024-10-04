@@ -4,6 +4,7 @@ import { apiUrlStart } from '../routes/Root';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../routes/Root';
+import { languageContext } from '../routes/Root';
 
 const pageVariants = {
     open: {
@@ -74,6 +75,7 @@ const transition = {
 function UserSelectPopup({isRsvpClick, setWhileHoverToggle, setInputBlockingboxStatus, setVariantHolder, setSelectedItem, isUserSelectPopupVisible, setIsUserSelectPopupVisible}){
     const [userList, setUserList] = useState(null);
     const {setUserData} = useContext(UserContext);
+    const {setLanguage} = useContext(languageContext);
     const navigate = useNavigate();
     const [popupStyle, setpopupStyle] = useState({"display": "none"});
 
@@ -108,7 +110,8 @@ function UserSelectPopup({isRsvpClick, setWhileHoverToggle, setInputBlockingboxS
 
 
     const handleClick = (user) => {
-        setUserData(user)
+        setUserData(user);
+        setLanguage(user.language);
         setIsUserSelectPopupVisible(false);
         if(isRsvpClick === true){
             

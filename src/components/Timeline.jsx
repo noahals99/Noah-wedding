@@ -113,7 +113,10 @@ function Timeline({language}) {
                         >
                             <div>
                                 <p>{item.time}</p>
-                                <p>{item.description}</p>
+                                {(language === "English") ? <p>{item.description}</p> : 
+                                    <p>{item.descriptionSpanish}</p>
+                                }
+                                
                             </div>
                             {(index !== timelineData.length-1) &&
                                 <div className="timeline-seperator"></div>

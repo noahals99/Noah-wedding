@@ -193,7 +193,7 @@ function Lodging() {
         <div className='app-background-color noselect'>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <motion.div id="Venue-container"  variants={imgVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                <img src={"https://www.katebackdrop.com/cdn/shop/articles/Photo_by_Thom_Milkovic_on_Unsplash.jpg?v=1674031429"} id='venue-img'></img>
+                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/beachBackgroundImage.JPEG"} id='venue-img'></img>
                 
                 {language === 'ENGLISH' && (
                     <motion.p className='page-title'  variants={titleVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>LODGING</motion.p>

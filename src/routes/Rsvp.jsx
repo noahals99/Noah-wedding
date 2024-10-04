@@ -531,154 +531,156 @@ function Rsvp() {
                 )}
                 {language === 'SPANISH' && (
                     <motion.div className='subsection-container' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                        {(userData) &&
-                            <div>
-                                {!(userData.rsvpSelection.willAttend != "") ?
-                                    <div>
-                                        <div className='subsection subsection-rsvp'>
-                                        <p className='subsection-title'>WILL YOU BE ATTENDING?</p>
-                            
+                    {(userData) &&
+                        <div>
+                            {!(userData.rsvpSelection.willAttend != "") ?
+                                <div>
+                                    <div className='subsection subsection-rsvp'>
+                                    <p className='subsection-title'>¿ASISTIRÁ?</p>
+                        
+                                    {(userData) &&
+                                        <div>
+                                            {(userData.group) ?
+                                                <div>
+                                                    <p className='subsection-info-small'>MARQUE LAS CASILLAS DE TODOS LOS ASISTENTES</p>
+                                                    <GroupRsvp setNotGoingUsers={setNotGoingUsers} isRsvp={true} addNotGoingUser={addNotGoingUser} removeNotGoingUser={removeNotGoingUser} addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} userData={userData}></GroupRsvp>
+                                                </div>  :
+                                                <div>
+                                                    <p className='subsection-info-small'>MARQUE LA CASILLA SI ASISTIRÁ</p>
+                                                    <div className='name-checkbox-container-single'>
+                                                        <div className='name-aligner'>
+                                                            <p>{userData.firstName} {userData.lastName}</p>
+                                                        </div>
+                                                        <CheckBox addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} userid={userData._id}></CheckBox>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                        
+                        
+                        
+                        
+                                    </div>
+                                    
+                                    <div className='subsection subsection-rsvp'>
+                                        <p className='subsection-title'>RESTRICCIONES DIETÉTICAS</p>
                                         {(userData) &&
                                             <div>
                                                 {(userData.group) ?
                                                     <div>
-                                                        <p className='subsection-info-small'>CHECK BOXES FOR EVERYONE WHO WILL BE ATTENDING</p>
-                                                        <GroupRsvp setNotGoingUsers={setNotGoingUsers} isRsvp={true} addNotGoingUser={addNotGoingUser} removeNotGoingUser={removeNotGoingUser} addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} userData={userData}></GroupRsvp>
+                                                        <p className='subsection-info-small'>MARQUE LA CASILLA DE CUALQUIER PERSONA CON RESTRICCIONES DIETÉTICAS</p>
+                                                        <GroupDiet setDietaryRestrictionsUsers={setDietaryRestrictionsUsers} dietaryRestrictionsUsers={dietaryRestrictionsUsers} addDietaryRestrictionsUsers={addDietaryRestrictionsUsers} removeDietaryRestrictionsUsers={removeDietaryRestrictionsUsers} userData={userData}></GroupDiet>
                                                     </div>  :
                                                     <div>
-                                                        <p className='subsection-info-small'>CHECK THE BOX IF YOU WILL BE ATTENDING</p>
-                                                        <div className='name-checkbox-container-single'>
-                                                            <div className='name-aligner'>
-                                                                <p>{userData.firstName} {userData.lastName}</p>
+                                                        <p className='subsection-info-small'>MARQUE LA CASILLA SI TIENE ALGUNA RESTRICCIÓN DIETÉTICA</p>
+                                                        <div className='input-name-container'>
+                                                            <div className='name-checkbox-container-single'>
+                                                                <div className='name-aligner'>
+                                                                    <p>{userData.firstName} {userData.lastName}</p>
+                                                                </div>
+                                                                <div className='checkbox-conatiner'>
+                                                                    <CheckBox addConfirmedUser={addDietaryRestrictionsUsers} removeConfirmedUser={removeDietaryRestrictionsUsers} userid={userData._id}></CheckBox>
+                                                                    
+                                                                </div>
                                                             </div>
-                                                            <CheckBox addConfirmedUser={addConfirmedUser} removeConfirmedUser={removeConfirmedUser} userid={userData._id}></CheckBox>
+                                                            {(userData._id in dietaryRestrictionsUsers) &&
+                                                                        <div>
+                                                                            <DietaryRestrictionsInput userId={userData._id} dietaryRestrictionsUsers={dietaryRestrictionsUsers} setDietaryRestrictionsUsers={setDietaryRestrictionsUsers}></DietaryRestrictionsInput>
+                                                                        </div>
+                                                            }
                                                         </div>
+                                                        
                                                     </div>
                                                 }
                                             </div>
                                         }
-                            
-                            
-                            
-                            
-                                        </div>
+                                    </div>
+                                    <div className='subsection' id='song-subsection'>
+                                        <p id='song-select-section-title' className='subsection-title'>¿QUIERES ESCUCHAR UNA CANCIÓN? ¡NOSOTROS TAMBIÉN! SUGIERE ALGUNAS...</p>
+                                        <p className='subsection-info-small'>TOCA UNA CANCIÓN SELECCIONADA PARA ELIMINARLA</p>
+                                        <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId}></SelectedSongsDisplay>
+                                        {(userData.group) ? 
+                                            <div>
+                                                {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
+                                                    <p id='selected-count-text'>RECUENTO DE CANCIONES SELECCIONADAS: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>:
+                                                    <p id='selected-count-text' style={{color:"red"}}>RECUENTO DE CANCIONES SELECCIONADAS: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
+                                                }
+                                            </div>:
+                                            <div>
+                                                {(Object.keys(selectedSongs).length != 2) ?
+                                                    <p id='selected-count-text'>RECUENTO DE CANCIONES SELECCIONADAS: {Object.keys(selectedSongs).length} of 2</p>:
+                                                    <p id='selected-count-text' style={{color:"red"}}>RECUENTO DE CANCIONES SELECCIONADAS: {Object.keys(selectedSongs).length} of {2}</p>
+                                                }
+                                            </div>
+                                        }
                                         
-                                        <div className='subsection subsection-rsvp'>
-                                            <p className='subsection-title'>DIETARY RESTRICTIONS</p>
-                                            {(userData) &&
-                                                <div>
-                                                    {(userData.group) ?
-                                                        <div>
-                                                            <p className='subsection-info-small'>CHECK THE BOX OF ANYONE WITH DIETARY RESTRICTIONS</p>
-                                                            <GroupDiet setDietaryRestrictionsUsers={setDietaryRestrictionsUsers} dietaryRestrictionsUsers={dietaryRestrictionsUsers} addDietaryRestrictionsUsers={addDietaryRestrictionsUsers} removeDietaryRestrictionsUsers={removeDietaryRestrictionsUsers} userData={userData}></GroupDiet>
-                                                        </div>  :
-                                                        <div>
-                                                            <p className='subsection-info-small'>CHECK THE BOX IF YOU HAVE ANY DIETARY RESTRICTIONS</p>
-                                                            <div className='input-name-container'>
-                                                                <div className='name-checkbox-container-single'>
-                                                                    <div className='name-aligner'>
-                                                                        <p>{userData.firstName} {userData.lastName}</p>
-                                                                    </div>
-                                                                    <div className='checkbox-conatiner'>
-                                                                        <CheckBox addConfirmedUser={addDietaryRestrictionsUsers} removeConfirmedUser={removeDietaryRestrictionsUsers} userid={userData._id}></CheckBox>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                {(userData._id in dietaryRestrictionsUsers) &&
-                                                                            <div>
-                                                                                <DietaryRestrictionsInput userId={userData._id} dietaryRestrictionsUsers={dietaryRestrictionsUsers} setDietaryRestrictionsUsers={setDietaryRestrictionsUsers}></DietaryRestrictionsInput>
-                                                                            </div>
-                                                                }
-                                                            </div>
+                                        {(userData.group) ? 
+                                            <>
+                                                <p id='search-song-title'>BUSCAR UNA CANCIÓN</p>
+                                                <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
+                                                <div id='search-results-container-border-radius'>
+                                                    <div id='search-results-container' style={isListVisible()}>
+                                                        {searchResults &&
+                                                        searchResults.map((item) => {
+                                                            if(selectedSongsId.indexOf(item.id) === -1){
+                                                                console.log(item);
+                                                                console.log(selectedSongsId.indexOf(item.id));
+                                                              return(
+                                                                <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId} setSelectedSongs={setSelectedSongs} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                )  
+                                                            }
                                                             
-                                                        </div>
-                                                    }
-                                                </div>
-                                            }
-                                        </div>
-                                        <div className='subsection' id='song-subsection'>
-                                            <p id='song-select-section-title' className='subsection-title'>WANT TO HEAR A SONG? SO DO WE! SUGGEST SOME...</p>
-                                            <p className='subsection-info-small'>TAP A SELECTED SONG TO REMOVE</p>
-                                            <SelectedSongsDisplay selectedSongs={selectedSongs} setSelectedSongs={setSelectedSongs} setSelectedSongsId={setSelectedSongsId}></SelectedSongsDisplay>
-                                            {(userData.group) ? 
-                                                <div>
-                                                    {(Object.keys(selectedSongs).length != userData.group.members.length * 2) ?
-                                                        <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>:
-                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {userData.group.members.length * 2}</p>
-                                                    }
-                                                </div>:
-                                                <div>
-                                                    {(Object.keys(selectedSongs).length != 2) ?
-                                                        <p id='selected-count-text'>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of 2</p>:
-                                                        <p id='selected-count-text' style={{color:"red"}}>SELECTED SONG COUNT: {Object.keys(selectedSongs).length} of {2}</p>
-                                                    }
-                                                </div>
-                                            }
-                                            
-                                            {(userData.group) ? 
-                                                <>
-                                                    <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
-                                                    <div id='search-results-container-border-radius'>
-                                                        <div id='search-results-container' style={isListVisible()}>
-                                                            {searchResults &&
-                                                            searchResults.map((item) => {
-                                                                if(selectedSongs.indexOf(item) === -1){
-                                                                   return(
-                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs}  setSelectedSongsId={setSelectedSongsId} maxAmount={userData.group.members.length * 2} selectedSongs={selectedSongs}></SongDisplay>
-                                                                    ) 
-                                                                }
-                                                                
-                                                            })
+                                                        })
 
-                                                            }
-                                                        </div>
+                                                        }
                                                     </div>
-                                                </>:
-                                                <>
-                                                    <p id='search-song-title'>SEARCH FOR A SONG</p>
-                                                    <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
-                                                    <div id='search-results-container-border-radius'>
-                                                        <div id='search-results-container' style={isListVisible()}>
-                                                            {searchResults &&
-                                                            searchResults.map((item) => {
-                                                                if(selectedSongs.indexOf(item) === -1){
-                                                                   return(
-                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongsId={setSelectedSongsId} setSelectedSongs={setSelectedSongs} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
-                                                                    ) 
-                                                                }
-                                                                
-                                                            })
-
+                                                </div>
+                                            </>:
+                                            <>
+                                                <p id='search-song-title'>BUSCAR UNA CANCIÓN</p>
+                                                <input type="text" className="input-box-song-search" value={songSearch} onChange={handleSearchChange} onFocus={onFocus} onBlur={handleOnBlur}></input>
+                                                <div id='search-results-container-border-radius' style={isListVisible()}>
+                                                    <div id='search-results-container' style={isListVisible()}>
+                                                        {searchResults &&
+                                                        searchResults.map((item) => {
+                                                            if(selectedSongs.indexOf(item) === -1){
+                                                               return(
+                                                                    <SongDisplay item={item} key={item.id} setSongSearch={setSongSearch} isListVisible={isListVisible} setSelectedSongs={setSelectedSongs} selectedSongsId={selectedSongsId} setSelectedSongsId={setSelectedSongsId} maxAmount={2} selectedSongs={selectedSongs}></SongDisplay>
+                                                                ) 
                                                             }
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            }
-                                            
-                                            
-                                        </div>
-                                        <div className='submit-button-section'>
-                                            {
+                                                            
+                                                        })
 
-                                            }
-                                            <button className='submit-button rsvp-submit' onClick={submitButtonClick}>SUBMIT</button>
-                                        </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </>
+                                        }
+                                        
                                         
                                     </div>
-                                    :
-                                    <div className='already-submitted-container'>
-                                        <div className='already-submitted-text-subcontainer'>
-                                            <p className='already-submitted-container-title'>RSVP HAS BEEN SUBMITTED</p>
-                                            <p className='already-submitted-container-subtitle'>TO MAKE ANY ADJUSTMENTS TO RSVP PLEASE REACH OUT TO NOAH OR ALE DIRECTLY</p>
-                                        </div>
+                                    <div className='submit-button-section'>
+                                        {
+
+                                        }
+                                        <button className='submit-button rsvp-submit' onClick={submitButtonClick}>ENVIAR</button>
                                     </div>
-                                }
-                            </div>
-                        }
-                        
-                        <SubmitConfirmationPopup handleConfirmClick={handleSubmit} handleCancelClick={handleCancelClick} checkVisibility={checkVisibility}></SubmitConfirmationPopup>
-                    </motion.div>
+                                    
+                                </div>
+                                :
+                                <div className='already-submitted-container'>
+                                    <div className='already-submitted-text-subcontainer'>
+                                        <p className='already-submitted-container-title'>RSVP HA SIDO ENVIADO</p>
+                                        <p className='already-submitted-container-subtitle'>PARA HACER CUALQUIER AJUSTE A RSVP POR FAVOR PÓNGASE EN CONTACTO CON NOAH O ALE DIRECTAMENTE</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    
+                    <SubmitConfirmationPopup handleConfirmClick={handleSubmit} handleCancelClick={handleCancelClick} checkVisibility={checkVisibility}></SubmitConfirmationPopup>
+                </motion.div>
                 )}
                 
             </div>

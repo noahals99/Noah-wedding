@@ -70,7 +70,7 @@ function Venue() {
         <div className='app-background-color noselect'>
             <BackButton isVisible={isVisible} toggleVisible={toggleVisible}/>
             <motion.div id="Venue-container"  variants={imgVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
-                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/venue.jpg"} id='venue-img' style={{objectPosition: '70% 70%'}}></img>
+                <img src={"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/mountainBackground.JPEG"} id='venue-img' style={{objectPosition: '50% 20%'}}></img>
                 
                 {language === 'ENGLISH' && (
                     <motion.p className='page-title'  variants={titleVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>VENUE</motion.p>

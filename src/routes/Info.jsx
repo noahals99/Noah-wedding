@@ -117,12 +117,12 @@ function Info() {
 
     const imgLinksBachelorette = [
         {picture:"../profile.jpg", name:"MELA", role: "MAIN"},
-        {picture:"../profile.jpg", name:"BRIANA", role: "GENERAL"},
-        {picture:"../profile.jpg", name:"KATIE", role: "GENERAL"},
+        {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Brianna-Icon.JPEG", name:"BRIANA", role: "GENERAL"},
+        {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Katie-Icon.JPEG", name:"KATIE", role: "GENERAL"},
         {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/VICTORIA.JPEG", name:"VICTORIA", role: "GENERAL"},
-        {picture:"../profile.jpg", name:"TAYLOR", role: "GENERAL"},
-        {picture:"../profile.jpg", name:"MOLLIE", role: "GENERAL"},
-        {picture:"../profile.jpg", name:"ELIZABETH", role: "MAIN"},
+        {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Taylor-Icon.JPEG", name:"TAYLOR", role: "GENERAL"},
+        {picture:"../profile.jpg", name:"MOLLY", role: "GENERAL"},
+        {picture:"https://weddingwebsiteimages.s3.us-west-2.amazonaws.com/Liz-Icon.JPEG", name:"ELIZABETH", role: "MAIN"},
     ]
 
 

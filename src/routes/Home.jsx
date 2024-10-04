@@ -73,7 +73,7 @@ function Home() {
     const translateSpanish = (menuItem) => {
         if(menuItem === "INFORMATION"){
             return "INFORMACIÓN"
-        }else if(menuItem === "INFORMATION"){
+        }else if(menuItem === "VENUE"){
             return "UBICACIÓN"
         }else if(menuItem === "LODGING"){
             return "ESTADIA"
@@ -162,6 +162,14 @@ function Home() {
                             
                             
                         </motion.p>
+                        <motion.p 
+                                id='incorrect-user-text'
+                                initial={false}
+                                variants={variantHolder}
+                                animate={"selected"}
+                            >
+                                ¿NO ERES TÚ? <span id='incorrect-user-text-span' onClick={() => setIsUserSelectPopupVisible(true)}>CAMBIAR DE CUENTA</span>
+                            </motion.p>
                     </div> 
                 }
                 </div>
@@ -197,6 +205,7 @@ function Home() {
                         </>
                     )}
                 </motion.div>
+                
 
                 <div id="selection-menu-container">
                     <div
