@@ -203,7 +203,7 @@ function Lodging() {
             <div id='venue-info-section'>
 
                 {language === 'ENGLISH' && (
-                    <motion.div className='subsection-container lodging-page'variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
+                    <motion.div className='subsection-container lodging-page' variants={infoVariants} animate={isVisible ? "visible" : "invisible" } initial={false}>
                         <div className='subsection-lodging-container'>
                             <p className='subsection-title lodging-title'>LODGING UNDER 35MIN FROM VENUE</p>
                             <div
